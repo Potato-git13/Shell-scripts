@@ -1,0 +1,16 @@
+#!/bin/bash
+# Make a new git repo the easy way
+
+arg1=$1
+
+git init
+git remote add origin $arg1
+
+touch README.md
+
+echo #README > README.md
+git add README.md
+git commit -m "Added a Readme from newgit"
+
+git branch -M main
+
