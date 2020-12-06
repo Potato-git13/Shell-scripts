@@ -1,0 +1,24 @@
+#!/bin/python
+# Convert bits to bytes/kilobytes/megabytes/gigabytes
+
+import argparse
+import sys
+
+def getOpts(args=sys.argv[1:]):
+    parser = argparse.ArgumentParser(description="I parse baby")
+    parser.add_argument("-b", "--byte", help="convert bits to bytes")
+    parser.add_argument("-k", "--kilobyte", help="convert bits to kilobytes")
+    parser.add_argument("-m", "--megabyte", help="convert bits to megabytes")
+    parser.add_argument("-g", "--gigabyte", help="convert bits to gigabytes")
+    options = parser.parse_args(args)
+    return options
+
+options = getOpts(sys.argv[1:])
+if options.byte:
+    print(str(int(options.byte) / 8) + " b")
+elif options.kilobyte:
+    print(str(int(options.kilobyte) / 8000) + " kb")
+elif options.megabyte:
+    print(str(int(options.megabyte) / 8000000) + " mb")
+elif options.gigabyte:
+    print(str(int(options.gigabyte) / 8000000000) + " gb")
