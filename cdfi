@@ -11,6 +11,8 @@ echo -n "\n\033[34m"
 pwd
 echo -n "\n\033[1;34m"
 ls -lh $path | grep ^d | awk '{print $0;$9}'
+echo -n "\033[1;36m"
+ls -lh $path | grep ^l | awk '{print $0;$9}'
 echo -n "\033[1;32m"
 ls -lph $path | grep -v / | grep -v '^total'
 echo -n "\033[0m\n"
