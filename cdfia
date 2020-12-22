@@ -8,7 +8,7 @@ path=""
 # check if the input is empty or not. If it is list the cwd if not list the inputed path
 [  -z "$input" ] && path="." || path="$input"
 echo -n "\n\033[34m"
-pwd
+[ -z "$input" ] && pwd || echo "$input"
 echo -n "\n\033[1;34m"
 ls -alh $path | grep ^d | awk '{print $0;$9}'
 echo -n "\033[1;36m"
