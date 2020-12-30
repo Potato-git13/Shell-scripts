@@ -6,8 +6,7 @@
 input=$1
 path=""
 # check if the input is empty or not. If it is list the cwd if not list the inputed path
-[  -z "$input" ] && path="." || path="$input"
-echo -n "\n\033[34m"
+[ -z "$input" ] && path="." || path="$input"
 [ -z "$input" ] && pwd || echo "$input"
 echo -n "\n\033[1;34m"
 ls -lh $path | grep ^d | awk '{print $0;$9}'
@@ -15,4 +14,3 @@ echo -n "\033[1;36m"
 ls -lh $path | grep ^l | awk '{print $0;$9}'
 echo -n "\033[1;32m"
 ls -lph $path | grep -v / | grep -v '^total'
-echo -n "\033[0m\n"
